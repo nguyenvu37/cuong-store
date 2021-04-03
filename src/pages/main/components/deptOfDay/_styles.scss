@@ -1,0 +1,91 @@
+.dept {
+  h2 {
+    text-align: center;
+  }
+  .form-dept {
+    width: 50%;
+    padding: 40px 20px;
+    margin: 40px 10px;
+    border: 1px solid #b8b8b8;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+
+    .form-inline,
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-inline {
+      position: relative;
+
+      .plus {
+        width: 30px;
+        position: absolute;
+        right: -18px;
+        bottom: 4px;
+
+        img {
+          color: #333;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          border: 2px solid #333;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 90%;
+    }
+
+    .sand-big,
+    .sand-mini,
+    .rock-big,
+    .rock-mini,
+    .brick,
+    .cement,
+    .tile,
+    .ceramic-tiles,
+    .tube,
+    .accessories {
+      width: 25%;
+    }
+
+    .customer-select,
+    .ceramic {
+      width: 30%;
+      margin-right: 10px;
+    }
+
+    .price {
+      width: 25%;
+      margin-left: auto;
+    }
+
+    .unit {
+      width: 15%;
+    }
+
+    .plastic {
+      position: relative;
+
+      .plus {
+        width: 30px;
+        position: absolute;
+        right: -18px;
+        bottom: 4px;
+
+        img {
+          color: #333;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          border: 2px solid #333;
+        }
+      }
+    }
+  }
+}

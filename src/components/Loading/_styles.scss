@@ -1,0 +1,13 @@
+.waiting {
+  display: flex;
+}
+.sk-chase {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  animation: sk-chase 0.5s infinite linear both;
+}
+
+.sk-chase-dot::before {
+  background-color: #fff;
+}
