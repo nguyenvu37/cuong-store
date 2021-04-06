@@ -27,10 +27,11 @@ const ItemFormTile = ({ onSendData }) => {
       category: dataSubmit?.option?.value,
       quantity: dataSubmit?.quantity && parseInt(dataSubmit?.quantity),
       price: dataSubmit?.price && parseInt(dataSubmit?.price),
+      unit: "viên",
     };
 
     setDataSubmit({
-      option: "",
+      option: listOptionTile[0],
       quantity: "",
       price: "",
     });

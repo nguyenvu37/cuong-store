@@ -16,7 +16,7 @@ export default () => {
     key: "root",
     storage,
     stateReconciler: seamlessImmutableReconciler,
-    whitelist: [],
+    whitelist: ["deptReducer"],
   };
 
   /* ------------- Saga Middleware ------------- */

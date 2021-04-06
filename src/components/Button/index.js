@@ -15,7 +15,7 @@ const Button = ({ isDisabled, onClick, customClass, children, type }) => {
 };
 
 Button.propTypes = {
-  onClick: PropTypes.string,
+  onClick: PropTypes.func,
   isDisabled: PropTypes.any,
   customClass: PropTypes.string,
   children: PropTypes.any,

@@ -28,11 +28,12 @@ const ItemFormAccessories = ({ onSendData }) => {
       category: dataSubmit?.option?.value,
       quantity: dataSubmit?.quantity && parseInt(dataSubmit?.quantity),
       price: dataSubmit?.price && parseInt(dataSubmit?.price),
+      unit: "cái",
     };
 
     setDataSubmit({
       ...dataSubmit,
-      option: "",
+      option: listOptionTube[0],
       title: "",
       quantity: "",
       price: "",

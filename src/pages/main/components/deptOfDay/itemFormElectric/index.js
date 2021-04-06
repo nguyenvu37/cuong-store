@@ -2,20 +2,19 @@ import PropTypes from "prop-types";
 import React, { Fragment, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import {
-  listOptionUnitCeramic,
-  listOptionCeramic,
+  listOptionElectric,
+  listOptionElectricBrand,
 } from "../../../../../common/listOption";
 import Input from "../../../../../components/Input";
-import SelectInput from "../../../../../components/Select";
 import CreateSelect from "../../../../../components/SelectCreatable";
 import IMAGES from "../../../../../themes/images";
 
-const ItemFromCeramic = ({ onSendData }) => {
+const ItemFormElectric = ({ onSendData }) => {
   const [dataSubmit, setDataSubmit] = useState({
-    optionCeramic: listOptionCeramic[0],
+    brand: listOptionElectricBrand[0],
+    option: listOptionElectric[0],
     quantity: "",
     price: "",
-    unit: listOptionUnitCeramic[0],
     title: "",
   });
 
@@ -29,51 +28,61 @@ const ItemFromCeramic = ({ onSendData }) => {
   const handlePlus = () => {
     let data = {
       id: uuidv4(),
-      title: dataSubmit?.title,
-      category: dataSubmit?.optionCeramic?.value,
+      title: dataSubmit?.title + dataSubmit?.brand?.value,
+      category: dataSubmit?.option?.value,
       quantity: dataSubmit?.quantity && parseInt(dataSubmit?.quantity),
       price: dataSubmit?.price && parseInt(dataSubmit?.price),
-      unit: dataSubmit?.unit && parseInt(dataSubmit?.unit),
+      unit: dataSubmit?.option?.value,
     };
 
     setDataSubmit({
-      optionCeramic: listOptionCeramic[0],
+      brand: listOptionElectricBrand[0],
+      option: listOptionElectric[0],
       quantity: "",
       price: "",
-      unit: listOptionUnitCeramic[0],
       title: "",
     });
 
-    onSendData("dataCeramic", data);
+    onSendData("dataElectric", data);
   };
   return (
     <Fragment>
       <Input
-        label="Gạch men"
+        label="Đồ mua"
         type="text"
         value={dataSubmit?.title}
         onChange={(e) => handleChange("title", e.target.value)}
         classLabel="form-label"
         classInput="form-control"
-        customClass="ceramic-tiles"
+        customClass="electric"
       />
       <CreateSelect
         isClearable
-        placeholderSelect="25x25"
-        onChange={(e) => handleChange("optionCeramic", e)}
-        option={dataSubmit?.optionCeramic}
+        placeholderSelect="Cadivi"
+        onChange={(e) => handleChange("brand", e)}
+        option={dataSubmit?.brand}
         isSearchable
-        listOptionString={listOptionCeramic}
-        label="Loại"
-        customClass="ceramic"
+        listOptionString={listOptionElectricBrand}
+        label="Nhãn hàng"
+        customClass="brand"
       />
-      <SelectInput
-        placeholderSelect="thùng"
-        onChange={(e) => handleChange("unit", e)}
-        option={dataSubmit?.unit}
+      <CreateSelect
+        isClearable
+        placeholderSelect="Cuộn"
+        onChange={(e) => handleChange("option", e)}
+        option={dataSubmit?.option}
         isSearchable
-        listOptionString={listOptionUnitCeramic}
-        label="Đơn vị"
+        listOptionString={listOptionElectric}
+        label="Loại"
+        customClass="option"
+      />
+      <Input
+        label="Số lượng"
+        type="number"
+        value={dataSubmit?.quantity}
+        onChange={(e) => handleChange("quantity", e.target.value)}
+        classLabel="form-label"
+        classInput="form-control"
         customClass="unit"
       />
       <Input
@@ -94,8 +103,8 @@ const ItemFromCeramic = ({ onSendData }) => {
   );
 };
 
-ItemFromCeramic.propTypes = {
+ItemFormElectric.propTypes = {
   onSendData: PropTypes.func,
 };
 
-export default ItemFromCeramic;
+export default ItemFormElectric;

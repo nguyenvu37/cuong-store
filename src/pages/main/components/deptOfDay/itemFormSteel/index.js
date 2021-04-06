@@ -2,21 +2,21 @@ import PropTypes from "prop-types";
 import React, { Fragment, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import {
-  listOptionUnitCeramic,
-  listOptionCeramic,
+  listOptionSteel,
+  listOptionSteelBrand,
 } from "../../../../../common/listOption";
 import Input from "../../../../../components/Input";
 import SelectInput from "../../../../../components/Select";
 import CreateSelect from "../../../../../components/SelectCreatable";
 import IMAGES from "../../../../../themes/images";
 
-const ItemFromCeramic = ({ onSendData }) => {
+const ItemFormSteel = ({ onSendData }) => {
   const [dataSubmit, setDataSubmit] = useState({
-    optionCeramic: listOptionCeramic[0],
+    option: listOptionSteelBrand[0],
     quantity: "",
     price: "",
-    unit: listOptionUnitCeramic[0],
-    title: "",
+    unit: "",
+    title: listOptionSteel[0],
   });
 
   const handleChange = (name, value) => {
@@ -37,45 +37,47 @@ const ItemFromCeramic = ({ onSendData }) => {
     };
 
     setDataSubmit({
-      optionCeramic: listOptionCeramic[0],
+      option: listOptionSteelBrand[0],
       quantity: "",
       price: "",
-      unit: listOptionUnitCeramic[0],
-      title: "",
+      unit: "",
+      title: listOptionSteel[0],
     });
 
-    onSendData("dataCeramic", data);
+    onSendData("dataSteel", data);
   };
   return (
     <Fragment>
-      <Input
-        label="Gạch men"
-        type="text"
-        value={dataSubmit?.title}
-        onChange={(e) => handleChange("title", e.target.value)}
-        classLabel="form-label"
-        classInput="form-control"
-        customClass="ceramic-tiles"
+      <SelectInput
+        placeholderSelect="Sắt 6"
+        onChange={(e) => handleChange("title", e)}
+        option={dataSubmit?.title}
+        isSearchable
+        listOptionString={listOptionSteel}
+        label="Sắt"
+        customClass="steel"
       />
       <CreateSelect
         isClearable
-        placeholderSelect="25x25"
-        onChange={(e) => handleChange("optionCeramic", e)}
-        option={dataSubmit?.optionCeramic}
+        placeholderSelect="Hòa phát"
+        onChange={(e) => handleChange("option", e)}
+        option={dataSubmit?.option}
         isSearchable
-        listOptionString={listOptionCeramic}
-        label="Loại"
-        customClass="ceramic"
+        listOptionString={listOptionSteelBrand}
+        label="Nhãn hàng"
+        customClass="brand-steel"
       />
-      <SelectInput
-        placeholderSelect="thùng"
-        onChange={(e) => handleChange("unit", e)}
-        option={dataSubmit?.unit}
-        isSearchable
-        listOptionString={listOptionUnitCeramic}
-        label="Đơn vị"
+
+      <Input
+        label="Số lượng"
+        type="number"
+        value={dataSubmit?.quantity}
+        onChange={(e) => handleChange("quantity", e.target.value)}
+        classLabel="form-label"
+        classInput="form-control"
         customClass="unit"
       />
+
       <Input
         label="Giá"
         type="number"
@@ -84,7 +86,6 @@ const ItemFromCeramic = ({ onSendData }) => {
         classLabel="form-label"
         classInput="form-control"
         customClass="price"
-        // placeholder={formatNumber(0)}
       />
 
       <div className="plus">
@@ -94,8 +95,7 @@ const ItemFromCeramic = ({ onSendData }) => {
   );
 };
 
-ItemFromCeramic.propTypes = {
+ItemFormSteel.propTypes = {
   onSendData: PropTypes.func,
 };
-
-export default ItemFromCeramic;
+export default ItemFormSteel;

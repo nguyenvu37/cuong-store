@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
-import Select from "react-select";
+import Creatable from "react-select/creatable";
 
-const SelectInput = ({
+const CreateSelect = ({
   placeholderSelect,
   innerRef,
   option,
@@ -16,12 +16,14 @@ const SelectInput = ({
   isSearchable,
   label,
   classLabel,
+  isClearable,
 }) => {
   return (
     <>
       <div className={`customer-select ${customClass}`}>
         {label && <p className={`input-label ${classLabel}`}>{label}</p>}
-        <Select
+        <Creatable
+          isClearable={isClearable}
           placeholder={placeholderSelect}
           ref={innerRef}
           value={option || null}
@@ -38,7 +40,7 @@ const SelectInput = ({
   );
 };
 
-SelectInput.propTypes = {
+CreateSelect.propTypes = {
   placeholderSelect: PropTypes.string,
   innerRef: PropTypes.any,
   option: PropTypes.object,
@@ -53,6 +55,7 @@ SelectInput.propTypes = {
   isSearchable: PropTypes.bool,
   label: PropTypes.string,
   classLabel: PropTypes.string,
+  isClearable: PropTypes.bool,
 };
 
-export default SelectInput;
+export default CreateSelect;

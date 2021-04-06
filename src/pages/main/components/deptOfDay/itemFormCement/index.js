@@ -35,10 +35,10 @@ const ItemFormCement = ({ onSendData }) => {
     };
 
     setDataSubmit({
-      option: "",
+      option: listOptionCement[0],
       quantity: "",
       price: "",
-      unit: "",
+      unit: listOptionUnitCement[0],
     });
 
     onSendData("dataCement", data);

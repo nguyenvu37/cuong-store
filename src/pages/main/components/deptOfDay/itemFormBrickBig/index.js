@@ -27,10 +27,11 @@ const ItemFormBrickBig = ({ onSendData }) => {
       category: dataSubmit?.option?.value,
       quantity: dataSubmit?.quantity && parseInt(dataSubmit?.quantity),
       price: dataSubmit?.price && parseInt(dataSubmit?.price),
+      unit: "viên",
     };
 
     setDataSubmit({
-      option: "",
+      option: listOptionBrickBig[0],
       quantity: "",
       price: "",
     });

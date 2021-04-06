@@ -27,10 +27,11 @@ const ItemFormSandMini = ({ onSendData }) => {
       category: dataSubmit?.option?.value,
       quantity: dataSubmit?.quantity && parseInt(dataSubmit?.quantity),
       price: dataSubmit?.price && parseInt(dataSubmit?.price),
+      unit: "khối",
     };
 
     setDataSubmit({
-      option: "",
+      option: listOptionSandMini[0],
       quantity: "",
       price: "",
     });

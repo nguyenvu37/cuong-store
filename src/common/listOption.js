@@ -80,3 +80,56 @@ export const listAccessories = [
     price: "price",
   },
 ];
+
+export const listOptionElectricBrand = [
+  { value: "Cadivi", label: "Cadivi" },
+  { value: "Sino", label: "Sino" },
+  { value: "Nival", label: "Nival" },
+  { value: "Điện quang", label: "Điện quang" },
+  { value: "Rạng đông", label: "Rạng đông" },
+  { value: "Thường", label: "Thường" },
+  { value: "Tốt", label: "Tốt" },
+];
+
+export const listOptionElectric = [
+  { value: "Cuộn", label: "Cuộn" },
+  { value: "mét", label: "mét" },
+  { value: "cái", label: "cái" },
+  { value: "kg", label: "kg" },
+  { value: "hộp", label: "hộp" },
+];
+
+export const listOptionCeramic = [
+  { value: "30x30", label: "30x30" },
+  { value: "30x45", label: "30x45" },
+  { value: "30x60", label: "30x60" },
+  { value: "40x40", label: "40x40" },
+  { value: "50x50", label: "50x50" },
+  { value: "60x60", label: "60x60" },
+  { value: "12x60", label: "12x60" },
+  { value: "12x30", label: "12x30" },
+  { value: "12x40", label: "12x40" },
+  { value: "12x50", label: "12x50" },
+];
+
+export const listOptionSteel = [
+  { value: "Sắt 6", label: "Sắt 6" },
+  { value: "Sắt 8", label: "Sắt 8" },
+  { value: "Sắt 10", label: "Sắt 10" },
+  { value: "Sắt 12", label: "Sắt 12" },
+  { value: "Sắt 14", label: "Sắt 14" },
+  { value: "Sắt 16", label: "Sắt 16" },
+  { value: "Sắt 18", label: "Sắt 18" },
+  { value: "Sắt 20", label: "Sắt 20" },
+  { value: "Sắt 22", label: "Sắt 22" },
+];
+
+export const listOptionSteelBrand = [
+  { value: "Hòa phát", label: "Hòa phát" },
+  { value: "Ý", label: "Ý" },
+  { value: "Úc", label: "Úc" },
+  { value: "Mỹ", label: "Mỹ" },
+  { value: "ĐN Ý", label: "ĐN Ý" },
+  { value: "ĐN Úc", label: "ĐN Úc" },
+  { value: "Việt Mỹ", label: "Việt Mỹ" },
+];
