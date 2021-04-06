@@ -1,0 +1,159 @@
+.dept {
+  display: flex;
+  h2 {
+    text-align: center;
+  }
+  .form-dept {
+    flex: 1;
+    padding: 40px 20px;
+    margin: 0 10px;
+    border: 1px solid #b8b8b8;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+
+    .form-inline,
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-inline {
+      position: relative;
+
+      .plus {
+        width: 30px;
+        position: absolute;
+        right: -18px;
+        bottom: 4px;
+
+        img {
+          color: #333;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          border: 2px solid #333;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 90%;
+    }
+
+    .sand-big,
+    .sand-mini,
+    .rock-big,
+    .rock-mini,
+    .brick,
+    .cement,
+    .tile,
+    .ceramic-tiles,
+    .tube,
+    .accessories {
+      width: 25%;
+    }
+
+    .customer-select,
+    .ceramic {
+      width: 40%;
+      margin-right: 10px;
+    }
+
+    .price {
+      width: 15%;
+      margin-left: auto;
+    }
+
+    .unit {
+      width: 15%;
+    }
+
+    .plastic {
+      position: relative;
+
+      .plus {
+        width: 30px;
+        position: absolute;
+        right: -18px;
+        bottom: 4px;
+
+        img {
+          color: #333;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          border: 2px solid #333;
+        }
+      }
+    }
+
+    .form-electric,
+    .form-houseware,
+    .form-steel {
+      width: 100%;
+
+      .electric,
+      .steel {
+        width: 25%;
+      }
+
+      .brand,
+      .option {
+        width: 20%;
+      }
+
+      .brand-steel {
+        width: 40%;
+      }
+
+      .unit {
+        width: 15%;
+      }
+
+      .price {
+        width: 15%;
+      }
+    }
+
+    .review {
+      float: right;
+    }
+  }
+
+  .table-dept {
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    h3 {
+      font-weight: 700;
+    }
+
+    .jumbotron {
+      margin-bottom: 0;
+    }
+
+    .card {
+      .card-body {
+        padding: 0;
+      }
+    }
+
+    .user {
+      margin-top: 20px;
+      margin-bottom: -50px;
+      p {
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-left: 10px;
+      }
+      .user-name,
+      .user-address,
+      .user-contact {
+        display: flex;
+      }
+    }
+  }
+}
