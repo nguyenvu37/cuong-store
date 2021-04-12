@@ -36,15 +36,17 @@ const ItemFromCeramic = ({ onSendData }) => {
       unit: dataSubmit?.unit && parseInt(dataSubmit?.unit),
     };
 
-    setDataSubmit({
-      optionCeramic: listOptionCeramic[0],
-      quantity: "",
-      price: "",
-      unit: listOptionUnitCeramic[0],
-      title: "",
-    });
+    if (dataSubmit.quantity && dataSubmit.price && dataSubmit.title) {
+      setDataSubmit({
+        optionCeramic: listOptionCeramic[0],
+        quantity: "",
+        price: "",
+        unit: listOptionUnitCeramic[0],
+        title: "",
+      });
 
-    onSendData("dataCeramic", data);
+      onSendData("dataCeramic", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
   return (
     <Fragment>

@@ -36,15 +36,17 @@ const ItemFormSteel = ({ onSendData }) => {
       unit: dataSubmit?.unit && parseInt(dataSubmit?.unit),
     };
 
-    setDataSubmit({
-      option: listOptionSteelBrand[0],
-      quantity: "",
-      price: "",
-      unit: "",
-      title: listOptionSteel[0],
-    });
+    if (dataSubmit.quantity && dataSubmit.price && dataSubmit.unit) {
+      setDataSubmit({
+        option: listOptionSteelBrand[0],
+        quantity: "",
+        price: "",
+        unit: "",
+        title: listOptionSteel[0],
+      });
 
-    onSendData("dataSteel", data);
+      onSendData("dataSteel", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
   return (
     <Fragment>

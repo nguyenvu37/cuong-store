@@ -1,22 +1,24 @@
+import moment from "moment";
 import React, { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
+import { useDispatch } from "react-redux";
+import { formatTime } from "../../../../../common/formatTime";
 import Input from "../../../../../components/Input";
-import ItemFormRockBig from "../itemFormRockBig";
-import ItemFormSandBig from "../itemFormSandBig/itemFormSandBig";
-import ItemFormSandMini from "../itemFormSandMini";
-import ItemFormTube from "../itemFormTube/itemFormTube";
-import ItemFormRockMini from "../itemFormRockMini";
+import { Creators } from "../../../redux";
+import ItemFormAccessories from "../itemFormAccessories/itemFormAccessories";
 import ItemFormBrickBig from "../itemFormBrickBig";
 import ItemFormBrickMini from "../itemFormBrickMini";
 import ItemFormCement from "../itemFormCement";
-import ItemFormTile from "../itemFormTile";
 import ItemFromCeramic from "../itemFormCeramicTiles";
 import ItemFormElectric from "../itemFormElectric";
 import ItemFormHouseware from "../itemFormHouseware";
-import ItemFormAccessories from "../itemFormAccessories/itemFormAccessories";
+import ItemFormRockBig from "../itemFormRockBig";
+import ItemFormRockMini from "../itemFormRockMini";
+import ItemFormSandBig from "../itemFormSandBig/itemFormSandBig";
+import ItemFormSandMini from "../itemFormSandMini";
 import ItemFormSteel from "../itemFormSteel";
-// import Button from "../../../../../components/Button";
-import { useDispatch } from "react-redux";
-import { Creators } from "../../../redux";
+import ItemFormTile from "../itemFormTile";
+import ItemFormTube from "../itemFormTube/itemFormTube";
 
 const FormDept = () => {
   const [dataSubmit, setDataSubmit] = useState({
@@ -37,9 +39,34 @@ const FormDept = () => {
     dataElectric: [],
     dataHouseware: [],
     dataSteel: [],
+    dateTime: new Date(),
   });
 
   const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   // const currentDate = new Date();
+  //   setDataSubmit({
+  //     name: "",
+  //     address: "",
+  //     phone: "",
+  //     dataAcc: [],
+  //     dataTube: [],
+  //     dataSandBig: [],
+  //     dataSandMini: [],
+  //     dataRockBig: [],
+  //     dataRockMini: [],
+  //     dataBrickBig: [],
+  //     dataBrickMini: [],
+  //     dataCement: [],
+  //     dataTile: [],
+  //     dataCeramic: [],
+  //     dataElectric: [],
+  //     dataHouseware: [],
+  //     dataSteel: [],
+  //     dateTime: formatTime(),
+  //   });
+  // }, []);
 
   const handleSendData = (type, data) => {
     switch (type) {
@@ -197,6 +224,19 @@ const FormDept = () => {
           classInput="form-control"
           customClass="contact"
           placeholder="Số điện thoại"
+        />
+      </div>
+
+      <div className="form-group d-flex justify-content-end form-date">
+        <DatePicker
+          dateFormat="dd/MM/yyyy"
+          selected={dataSubmit?.dateTime}
+          onChange={(date) =>
+            setDataSubmit({
+              ...dataSubmit,
+              date,
+            })
+          }
         />
       </div>
 

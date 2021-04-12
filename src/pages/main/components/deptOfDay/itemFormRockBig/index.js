@@ -30,13 +30,15 @@ const ItemFormRockBig = ({ onSendData }) => {
       unit: "khối",
     };
 
-    setDataSubmit({
-      option: listOptionRock[0],
-      quantity: "",
-      price: "",
-    });
+    if (dataSubmit.quantity && dataSubmit.price) {
+      setDataSubmit({
+        option: listOptionRock[0],
+        quantity: "",
+        price: "",
+      });
 
-    onSendData("dataRockBig", data);
+      onSendData("dataRockBig", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
 
   return (

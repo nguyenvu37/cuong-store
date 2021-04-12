@@ -31,15 +31,21 @@ const ItemFormAccessories = ({ onSendData }) => {
       unit: "cái",
     };
 
-    setDataSubmit({
-      ...dataSubmit,
-      option: listOptionTube[0],
-      title: "",
-      quantity: "",
-      price: "",
-    });
+    if (
+      (dataSubmit.title !== "",
+      dataSubmit.quantity !== "",
+      dataSubmit.price !== "")
+    ) {
+      setDataSubmit({
+        ...dataSubmit,
+        option: listOptionTube[0],
+        title: "",
+        quantity: "",
+        price: "",
+      });
 
-    onSendData("dataAcc", data);
+      onSendData("dataAcc", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
 
   return (

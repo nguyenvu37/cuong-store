@@ -30,13 +30,15 @@ const ItemFormBrickMini = ({ onSendData }) => {
       unit: "viên",
     };
 
-    setDataSubmit({
-      option: listOptionBrickBig[0],
-      quantity: "",
-      price: "",
-    });
+    if (dataSubmit.quantity !== "" && dataSubmit.price !== "") {
+      setDataSubmit({
+        option: listOptionBrickBig[0],
+        quantity: "",
+        price: "",
+      });
 
-    onSendData("dataBrickMini", data);
+      onSendData("dataBrickMini", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
 
   return (

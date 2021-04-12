@@ -120,6 +120,10 @@
     .review {
       float: right;
     }
+
+    .form-date {
+      margin-right: -10px;
+    }
   }
 
   .table-dept {
@@ -151,7 +155,8 @@
       }
       .user-name,
       .user-address,
-      .user-contact {
+      .user-contact,
+      .user-time {
         display: flex;
       }
     }

@@ -34,14 +34,15 @@ const ItemFormCement = ({ onSendData }) => {
       unit: dataSubmit?.unit && parseInt(dataSubmit?.unit),
     };
 
-    setDataSubmit({
-      option: listOptionCement[0],
-      quantity: "",
-      price: "",
-      unit: listOptionUnitCement[0],
-    });
+    if (dataSubmit.quantity !== "" && dataSubmit.price !== "") {
+      setDataSubmit({
+        option: listOptionCement[0],
+        quantity: "",
+        price: "",
+      });
 
-    onSendData("dataCement", data);
+      onSendData("dataCement", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
   return (
     <Fragment>

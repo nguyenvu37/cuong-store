@@ -29,14 +29,15 @@ const ItemFormTile = ({ onSendData }) => {
       price: dataSubmit?.price && parseInt(dataSubmit?.price),
       unit: "viên",
     };
+    if (dataSubmit.quantity && dataSubmit.price) {
+      setDataSubmit({
+        option: listOptionTile[0],
+        quantity: "",
+        price: "",
+      });
 
-    setDataSubmit({
-      option: listOptionTile[0],
-      quantity: "",
-      price: "",
-    });
-
-    onSendData("dataTile", data);
+      onSendData("dataTile", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
 
   return (

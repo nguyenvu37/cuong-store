@@ -30,13 +30,15 @@ const ItemFormSandBig = ({ onSendData }) => {
       unit: "khối",
     };
 
-    setDataSubmit({
-      option: listOptionSandBig[0],
-      quantity: "",
-      price: "",
-    });
+    if (dataSubmit.quantity && dataSubmit.price) {
+      setDataSubmit({
+        option: listOptionSandBig[0],
+        quantity: "",
+        price: "",
+      });
 
-    onSendData("dataSandBig", data);
+      onSendData("dataSandBig", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
 
   return (

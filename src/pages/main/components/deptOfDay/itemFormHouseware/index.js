@@ -35,15 +35,17 @@ const ItemFormHouseware = ({ onSendData }) => {
       unit: dataSubmit?.option?.value,
     };
 
-    setDataSubmit({
-      brand: listOptionElectricBrand[0],
-      option: listOptionElectric[0],
-      quantity: "",
-      price: "",
-      title: "",
-    });
+    if (dataSubmit.quantity && dataSubmit.price && dataSubmit.title) {
+      setDataSubmit({
+        brand: listOptionElectricBrand[0],
+        option: listOptionElectric[0],
+        quantity: "",
+        price: "",
+        title: "",
+      });
 
-    onSendData("dataHouseware", data);
+      onSendData("dataHouseware", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
   return (
     <Fragment>

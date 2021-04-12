@@ -31,15 +31,17 @@ const ItemFormTube = ({ onSendData }) => {
       unit: "ống",
     };
 
-    setDataSubmit({
-      ...dataSubmit,
-      option: listOptionTube[0],
-      title: "",
-      quantity: "",
-      price: "",
-    });
+    if (dataSubmit.title && dataSubmit.quantity && dataSubmit.price) {
+      setDataSubmit({
+        ...dataSubmit,
+        option: listOptionTube[0],
+        title: "",
+        quantity: "",
+        price: "",
+      });
 
-    onSendData("dataTube", data);
+      onSendData("dataTube", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
 
   return (

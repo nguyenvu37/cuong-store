@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { formatTime } from "../../../../../common/formatTime";
 import TableComponent from "./table/tableComponent";
 
 const TableDept = () => {
@@ -21,6 +22,15 @@ const TableDept = () => {
           <div className="user-contact">
             <h5>Liên hệ: </h5>
             <p>{dataDept?.phone}</p>
+          </div>
+
+          <div className="user-time">
+            <h5>Ngày: </h5>
+            <p>
+              {typeof dataDept?.dateTime === "object"
+                ? formatTime(dataDept.dateTime)
+                : ""}
+            </p>
           </div>
         </div>
       </div>

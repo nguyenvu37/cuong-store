@@ -35,15 +35,17 @@ const ItemFormElectric = ({ onSendData }) => {
       unit: dataSubmit?.option?.value,
     };
 
-    setDataSubmit({
-      brand: listOptionElectricBrand[0],
-      option: listOptionElectric[0],
-      quantity: "",
-      price: "",
-      title: "",
-    });
+    if (dataSubmit.quantity && dataSubmit.price && dataSubmit.title) {
+      setDataSubmit({
+        brand: listOptionElectricBrand[0],
+        option: listOptionElectric[0],
+        quantity: "",
+        price: "",
+        title: "",
+      });
 
-    onSendData("dataElectric", data);
+      onSendData("dataElectric", data);
+    } else alert("Phải nhập đầy đủ số liệu");
   };
   return (
     <Fragment>
